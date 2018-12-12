@@ -1,0 +1,258 @@
+Go to Marvin --> !brew --> run script from forum.
+
+Setup docker-machine:
+$ docker-machine rm -f default
+$ export MACHINE_STORAGE_PATH=/tmp
+$ docker-machine create --driver virtualbox default
+$ docker-machine env default
+$ eval $(docker-machine env default)
+------------------------------------------------------
+Install 
+- docker(via Brew), version: 1.12 at least
+- docker-machine(via Brew), docker-machine binary, don't use 'Docker for Mac', 
+- virtualbox(via the Managed Software Center)
+
+Exercise: give the shell command(s).
+
+Resourses:
+• Example for Beginner https://github.com/docker/labs/tree/master/beginner/
+• Docker official documentation https://docs.docker.com/
+• Docker Get Started https://docs.docker.com/get-started/
+• docker_setup.sh https://gist.github.com/gcamerli/b8cf836f8627cb285f33086db10096a2
+• tips https://github.com/VBrazhnik/docker-1/wiki
+
+• Dockerfile Best Practices https://docs.docker.com/develop/develop-images/dockerfile_best-practices/ 
+• Docker’s public Registry https://hub.docker.com/
+• Docker’s official Github with many upcoming projects https://github.com/docker    
+• Jessie Frazelle’s blog, former main contributor on Docker https://blog.jessfraz.com/
+• Her Github with many good idea
+
+Dockerfiles (aka a Makerfile for Docker)
+
+-=-===-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-
+* Docker is one company that hosts an open‐source project to help programmers package software and its
+dependencies into a self‐contained program called a virtual container.
+
+* Docker is a full development platform for creating containerized apps
+
+* A container is a standard unit of software that packages up code and all its dependencies 
+so the application runs quickly and reliably from one computing environment to another. 
+
+* A Docker container image is a lightweight, standalone, executable package of software that 
+includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
+Containerized software will always run the same, regardless of the infrastructure.
+Containers isolate software from its environment and ensure that it works uniformly 
+despite differences for instance between development and staging.
+
+* A Dockerfile is a text document that contains all the commands you would normally execute manually 
+in order to build a Docker image. 
+Docker can build images automatically by reading the instructions from a Dockerfile.
+The 'docker build' command builds an image from a Dockerfile and a context. 
+The build is run by the Docker daemon, not by the CLI. 
+
+Here is the format of the Dockerfile:
+
+# Comment
+INSTRUCTION arguments
+
+A Dockerfile must start with a `FROM` instruction. 
+    
+    The FROM instruction specifies the Base Image from which you are building.
+    The FROM instruction initializes a new build stage and sets the Base Image for subsequent instructions.
+    The RUN instruction will execute any commands in a new layer on top of the current image and commit the results. 
+    The MAINTAINER instruction sets the Author field of the generated images.
+    The CMD provides defaults for an executing container.
+    The LABEL instruction adds metadata to an image.
+    The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. 
+    The ENV instruction sets the environment variable <key> to the value <value>.
+    The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
+    The COPY instruction copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
+    An ENTRYPOINT allows you to configure a container that will run as an executable.
+    The VOLUME instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers. 
+    The USER instruction sets the user name (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.
+    The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile.
+    The ARG instruction defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg <varname>=<value> flag. 
+    The ONBUILD instruction adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. 
+    The STOPSIGNAL instruction sets the system call signal that will be sent to the container to exit.
+    The HEALTHCHECK instruction tells Docker how to test a container to check that it is still working.
+    The SHELL instruction allows the default shell used for the shell form of commands to be overridden. 
+
+Docker images:    
+alpine	 - A minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!
+debian	 - Debian is a Linux distribution that’s composed entirely of free and open-source software.
+ruby	 - Ruby is a dynamic, reflective, object-oriented, general-purpose, open-source programming language.
+ubuntu	 - Ubuntu is a Debian-based Linux operating system based on free software.
+...
+
+$ docker pull alpine    // The pull command fetches the alpine image from the Docker registry and saves it in our system. 
+$ docker images         // to see a list of all images on your system.
+
+Let's now run a Docker container based on this image.
+$ docker run alpine ls -l
+$ docker run alpine echo "hello from alpine"
+
+Flags:
+-d will create a container with the process detached from our terminal
+-P will publish all the exposed container ports to random ports on the Docker host
+-e is how you pass environment variables to the container
+--name allows you to specify a container name
+AUTHOR is the environment variable name and Your Name is the value that you can pass
+
+-------------------------------------
+Commands:
+
+$ docker version    // OR $ docker info // to view more details about your docker installation.
+
+$ docker --version        // Ensure your versions are up-to-date and compatible with Docker.app
+$ docker-compose --version
+$ docker-machine --version
+
+$ docker run hello-world  //  test that your installation works by running the simple Docker image, hello-world
+$ docker images hello-world
+$ docker run -d -p 80:80 --name webserver nginx   // Start a Dockerized web server. In a web browser, go to http://localhost/ to view the nginx homepage.
+$ docker container ls     // View the details on the container while your web server is running
+
+// Stop and remove containers and images with the following commands.
+$ docker container stop webserver
+$ docker container ls -a
+$ docker container rm webserver
+$ docker image ls
+$ docker image rm nginx
+
+
+You can use Docker Machine to:
+- Install and run Docker on Mac or Windows
+- Provision and manage multiple remote Docker hosts
+- Provision Swarm clusters
+
+* Docker Machine is a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands.
+Using docker-machine commands, you can start, inspect, stop, and restart a managed host, upgrade the Docker 
+client and daemon, and configure a Docker client to talk to your host.
+Machine was the only way to run Docker on Mac or Windows previous to Docker v1.12. 
+
+* Docker Hub is the place where open Docker images are stored. 
+Your free Docker ID grants you access to Docker services such as the Docker Store, Docker Cloud, 
+Docker Hub repositories, and some beta programs.
+
+---------------------- Docker Engine ---------------------- 
+When people say “Docker” they typically mean Docker Engine, the client-server application made up of 
+    - the Docker daemon, 
+    - a REST API that specifies interfaces for interacting with the daemon, 
+    - and a command line interface (CLI) client that talks to the daemon (through the REST API wrapper). 
+Docker Engine accepts docker commands from the CLI, such as 
+$ docker run <image>
+$ docker ps   // to list running containers (Since no containers are running, you see a blank line.)
+$ docker ps -a  // a list of all containers that you ran
+$ docker image ls  // to list images, and so on.
+
+
+
+---------------------- Docker Machine ----------------------
+Docker Machine is a tool for provisioning and managing your Dockerized hosts (hosts with Docker Engine 
+on them). Typically, you install Docker Machine on your local system. Docker Machine has its own command 
+line client docker-machine and the Docker Engine client, docker. 
+
+You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, 
+in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.
+Using docker-machine commands, you can start, inspect, stop, and restart a managed host, upgrade the 
+Docker client and daemon, and configure a Docker client to talk to your host.
+
+Docker Machine allows you to provision Docker machines in a variety of environments, including 
+virtual machines that reside on your local system, on cloud providers, or on bare metal servers 
+(physical computers). Docker Machine creates a Docker host, and you use the Docker Engine client 
+as needed to build images and create containers on the host.
+
+You can use docker-machine create with the virtualbox driver to create additional local machines.
+To run a Docker container, you:
+- create a new (or start an existing) Docker virtual machine
+- switch your environment to your new VM
+- use the docker client to create, load, and manage containers
+
+The 'docker-machine create' command typically requires that you specify, at a minimum:
+--driver - to indicate the provider on which to create the machine (VirtualBox, DigitalOcean, AWS, and so on).
+<machine> - name of the host you want to create.
+
+$ docker-machine ls - to list available machines
+$ docker-machine create --driver virtualbox default - to create a machine (If this is your first machine, name it default).
+$ docker-machine env default - to tell Docker to talk to the new machine.
+$ eval "$(docker-machine env default)" - to connect your shell to the new machine.
+// You need to do this each time you open a new shell or restart your machine.
+// You can now run Docker commands on this host.
+
+$ docker run busybox echo hello world   // to download and run a 'busybox' container
+$ docker-machine ip default             // Get the host IP address.
+$ docker run -d -p 8000:80 nginx        // Run a Nginx webserver in a container
+
+$ docker-machine stop default           // Start and stop machines
+$ docker-machine start default
+
+$ docker-machine help                   // list of commands
+$ docker-machine help config            // description of a particular argument
+
+
+
+Commands:
+  active                Print which machine is active
+  config                Print the connection config for machine
+  create                Create a machine
+  env                   Display the commands to set up the environment for the Docker client
+  inspect               Inspect information about a machine
+  ip                    Get the IP address of a machine
+  kill                  Kill a machine
+  ls                    List machines
+  provision             Re-provision existing machines
+  regenerate-certs      Regenerate TLS Certificates for a machine
+  restart               Restart a machine
+  rm                    Remove a machine
+  ssh                   Log into or run a command on a machine with SSH.
+  scp                   Copy files between machines
+  mount                 Mount or unmount a directory from a machine with SSHFS.
+  start                 Start a machine
+  status                Get the status of a machine
+  stop                  Stop a machine
+  upgrade               Upgrade a machine to the latest version of Docker
+  url                   Get the URL of a machine
+  version               Show the Docker Machine version or a machine docker version
+  help                  Shows a list of commands or help for one command
+
+
+Machine drivers
+    Amazon Web Services
+    Microsoft Azure
+    Digital Ocean
+    Exoscale
+    Google Compute Engine
+    Generic
+    Microsoft Hyper-V
+    OpenStack
+    Rackspace
+    IBM Softlayer
+    Oracle VirtualBox
+    VMware vCloud Air
+    VMware Fusion
+    VMware vSphere
+    VMware Workstation (unofficial plugin, not supported by Docker)
+    Grid 5000 (unofficial plugin, not supported by Docker)
+--------------------------------------------------------------------------------------------
+Shell
+A shell is a user interface for access to an operating system's services. 
+The term 'shell' is often used to describe a command-line interpreter(CLI).
+
+To find the shell you have on the default environment you can check the value 
+of the SHELL environment variable:
+$ echo $SHELL   // gives you the default shell, e.g. /bin/bash
+$ echo $0       // gives you the current shell.
+If you didn't change any configuration it should be Bash since Bash it's the default shell on Ubuntu.
+
+
+A Unix shell is a command-line interpreter or shell that provides a 
+command line user interface for Unix-like operating systems.
+    - Thompson shell, sh (The first Unix shell, 1971 - not in current use)
+    - Bourne shell, sh  
+    - the C shell, csh
+    - Almquist shell (ash)
+    - Bourne-Again shell (bash)
+    - Debian Almquist shell (dash)
+    - Korn shell (ksh)
+    - Z shell (zsh) - a relatively modern shell that is backward compatible with bash.
