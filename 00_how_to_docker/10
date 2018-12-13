@@ -1,0 +1,9 @@
+# Create a volume named hatchery.
+
+docker volume create --name hatchery
+
+# https://docs.docker.com/engine/reference/commandline/volume_create/
+# --name — Specify volume name.
+
+# How to check result?
+# docker volume ls

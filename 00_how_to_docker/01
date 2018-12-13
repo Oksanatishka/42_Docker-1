@@ -1,0 +1,9 @@
+# Create a virtual machine with docker-machine using the virtualbox driver, and
+# named Char.
+
+docker-machine create -driver virtualbox Char
+
+# Resource: https://docs.docker.com/machine/reference/create/
+
+# How to check result?
+# docker-machine ls
