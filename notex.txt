@@ -256,3 +256,20 @@ command line user interface for Unix-like operating systems.
     - Debian Almquist shell (dash)
     - Korn shell (ksh)
     - Z shell (zsh) - a relatively modern shell that is backward compatible with bash.
+------------------------------------------------------------------------------------------
+
+01 create VM
+02 get IP of VM
+03 make active VM
+04 pull the image from Docker Hub (but not run it)
+05 run the image
+06 launch nginx container
+07 internal IP of overlord container
+08 launch a shell from alpine container
+09 from debian container we install everything we need to compile C code
+10 create volume hatchery
+11 list volumes
+12 launch mysql container 
+13
+14
+15
