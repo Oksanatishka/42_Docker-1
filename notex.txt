@@ -1,5 +1,9 @@
 Go to Marvin --> !brew --> run script from forum.
 
+brew uninstall docker
+brew uninstall docker-machine
+brew install docker docker-machine docker-compose
+
 Setup docker-machine:
 $ docker-machine rm -f default
 $ export MACHINE_STORAGE_PATH=/tmp
