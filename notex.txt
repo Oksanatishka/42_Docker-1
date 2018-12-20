@@ -1,8 +1,45 @@
+
+$ docker
+$ docker info
+$ docker images
+$ cd hello_world
+$ docker build .
+$ ls
+$ ./new_container.sh
+$ service nginx start
+$ docker ps
+$ boot2docker ip    // open in browser 192.168.59.103:49154, where 49154 is taken from 'docker ps' command
+$ exit
+$ cd ../ssh_test
+$ docker images
+$ ls    // new_framework00.sh
+$ ./new_framework00.sh
+$ docker ps
+$ ssh root@192.168.59.103 -p 49156  // yes
+
+
+$ docker
+$ docker run -it ubuntu
+$ whoami
+$ ls
+bin boot dev etc home lib media opt proc root run sbin srv sys tmp usr var
+$ touch unertwegrfk
+$ ls 
+$ apt-get update
+$ apt-get install -y htop
+$ htop
+$ exit
+$ 
+
+------------------------------------------------------
 Go to Marvin --> !brew --> run script from forum.
 
 brew uninstall docker
 brew uninstall docker-machine
 brew install docker docker-machine docker-compose
+
+To fix issues:
+Replace boot2docker.iso archive in /nfs/2018/o/obibik/.docker/machine/cache (take it from here https://github.com/boot2docker/boot2docker/releases).
 
 Setup docker-machine:
 $ docker-machine rm -f default
@@ -262,18 +299,40 @@ command line user interface for Unix-like operating systems.
     - Z shell (zsh) - a relatively modern shell that is backward compatible with bash.
 ------------------------------------------------------------------------------------------
 
-01 create VM
+01 create VM (Char)
 02 get IP of VM
 03 make active VM
 04 pull the image from Docker Hub (but not run it)
 05 run the image
 06 launch nginx container
-07 internal IP of overlord container
+07 get internal IP of overlord container
 08 launch a shell from alpine container
 09 from debian container we install everything we need to compile C code
 10 create volume hatchery
 11 list volumes
 12 launch mysql container 
-13
-14
-15
+13 print the environment variables of the spawning-pool container 
+? 14 Launch a wordpress container
+15 Launch a phpmyadmin container 
+16 Look up the spawning-pool container’s logs
+17 Display all the currently active containers
+18 Relaunch the overlord container
+19 Launch a container name Abathur(python container)
+20 Create a local swarm
+? 21 Create VM (Aiur)
+? 22 Turn Aiur into a slave of the local swarm in which Char is leader 
+23 Create an overlay-type internal network (overmind)
+24 Launch a rabbitmq SERVICE (name: orbital-command)
+25 List all the services of the local swarm
+26 Launch a 42school/engineering-bay service (name: engineering-bay)
+27 Get the real-time logs of one the tasks 
+28 Launch a 42school/marine-squad in two replicas (name: marines)
+29 Display all the tasks of the marines service
+30 Increase the number of copies of the marines service up to twenty
+31 Force quit and delete all the services
+32 Force quit and delete all the containers 
+33 Delete all the container images stored on the Char
+34 Delete the Aiur virtual machine 
+
+service - container - images - VM
+
