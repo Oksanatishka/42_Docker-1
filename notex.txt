@@ -32,11 +32,16 @@ $ exit
 $ 
 
 ------------------------------------------------------
+# Setup Brew
 Go to Marvin --> !brew --> run script from forum.
 
 brew uninstall docker
 brew uninstall docker-machine
-brew install docker docker-machine docker-compose
+
+# Setup docker from Brew
+brew install docker
+brew install docker-machine 
+brew install docker-compose
 
 To fix issues:
 Replace boot2docker.iso archive in /nfs/2018/o/obibik/.docker/machine/cache (take it from here https://github.com/boot2docker/boot2docker/releases).
