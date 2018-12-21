@@ -25,3 +25,6 @@ ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure
 
 # How to run it?
 # docker run -it --rm -p 8080:80 -p 8022:22 -p 8443:443 --privileged ex03
+
+# The tz database (tzdata) is a collaborative compilation of information about the world's time zones, 
+# primarily intended for use with computer programs and operating systems.
