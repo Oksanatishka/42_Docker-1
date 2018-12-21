@@ -11,3 +11,5 @@ RUN npm install yarn --global && npm install npm --global
 
 # How to run it?
 # docker run --rm -ti a03
+
+# Yarn is a package manager https://yarnpkg.com/
