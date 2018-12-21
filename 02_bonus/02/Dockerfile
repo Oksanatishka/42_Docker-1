@@ -20,3 +20,6 @@ ENTRYPOINT java -Xmx1024M -Xms1024M -jar server.jar
 
 # How to run it?
 # docker run --rm -d -p 25565:25565 a02
+
+# The default JRE is used for compiling and launching Java programs in all projects.
+# -Xmxn   Specify the maximum size, in bytes, of the memory allocation pool.
