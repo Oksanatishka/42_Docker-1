@@ -1,3 +1,5 @@
+# You are going to create your first Dockerfile to containerize Rails applications. 
+
 FROM ruby
 RUN apt-get update -y && apt-get upgrade -y
 RUN gem install rails
