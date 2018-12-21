@@ -23,3 +23,12 @@ CMD ["sh", "teamspeak3-server_linux_amd64/ts3server_minimal_runscript.sh"]
 
 # docker build -t ex01 .
 # docker run -it --rm --name ex1 -e TS3SERVER_LICENSE=accept -p 9987:9987/udp -p 10011:10011 -p 30033:30033 teamspeak
+
+# https://linux.die.net/man/8/apt-get
+# apt-get is the command-line tool for handling packages, and may be considered the user's "back-end" to other tools using the APT library.
+# wget is a command line utility for downloading files from the Internet. 
+# bzip2 file compression program 
+# 
+# x (extract) - untar or extract a tar file.
+# v – Verbosely show the .tar file progress.
+# f – File name type of the archive file.
