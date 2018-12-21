@@ -1,3 +1,6 @@
+# Docker can be useful to test an application that’s still being developed without polluting your libraries. You will have to design a Dockerfile that gets the development
+# version of Gitlab - Community Edition installs it with all the dependencies and the necessary configurations, and launches the application, all as it builds.
+
 FROM ubuntu:16.04
 
 MAINTAINER obibik <obibik@student.42.us.org>
