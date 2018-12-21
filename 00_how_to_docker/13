@@ -3,4 +3,9 @@
 
 docker exec spawning-pool env
 
+# exec              Run a command in a running container
+# --env , -e		Set environment variables
+
 # or docker inspect -f '{{.Config.Env}}' spawning-pool
+# inspect           Return low-level information on Docker objects
+# --format , -f		Format the output using the given Go template

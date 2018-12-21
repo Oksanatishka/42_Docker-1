@@ -1,3 +1,7 @@
 # Get the real-time logs of one the tasks of the engineering-bay service.
 
 docker service logs -f engineering-bay
+
+# usage:                docker service logs [OPTIONS] SERVICE|TASK
+# docker service logs   Fetch the logs of a service or task
+# --follow , -f		    Follow log output

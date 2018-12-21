@@ -12,12 +12,26 @@ docker run -d -p 3000:3000 --name Abathur -v /home/docker/:/root -e FLASK_APP=ap
 docker cp app.py Abathur:/root
 docker start Abathur
 
+# pip install flask     to install Flask
+# flask run             To run the application
+# --host=0.0.0.0        to make the server publicly available
+# start                 Start one or more stopped containers
+# cp                    Copy files/folders between a container and the local filesystem
+
+# A minimal Flask application looks something like this:
+
 # from flask import Flask
-#app = Flask(__name__)
+# app = Flask(__name__)
 #
-#@app.route('/')
-#def hello_world():
+# @app.route('/')
+# def hello_world():
 #    return 'Hello, World!'
 
-#to check run 
-#curl $(docker-machine ip default):3000
+# To check run 
+# curl $(docker-machine ip Char):3000
+# OR http://192.168.99.100:3000/
+
+# man curl:
+# curl is a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, 
+# FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, 
+# SMTPS, TELNET and TFTP). The command is designed to work without user interaction.

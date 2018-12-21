@@ -2,3 +2,6 @@
 # as well.
 
 docker rmi $(docker images -a -q)
+
+# --all , -a		Show all images (default hides intermediate images)
+# --quiet , -q		Only show numeric IDs

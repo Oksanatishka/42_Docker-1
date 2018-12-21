@@ -2,10 +2,12 @@
 
 docker swarm init --advertise-addr $(docker-machine ip Char) --listen-addr 0.0.0.1:2377
 
-#to check run:
-#docker info
-#docker node ls
-# note above command won't work beacause of not fixed bug, we can only
-# use swarm on default ip, not local system
-#docker swarm init --advertise-addr 172.17.0.1 --listen-addr 0.0.0.0:2377 
-#
+# docker swarm init [OPTIONS]
+# docker swarm init             Initialize a swarm
+
+
+# To check run:
+# docker info                   Display system-wide information
+# docker node ls                List nodes in the swarm
+# Note: above command won't work because of not fixed bug, we can only use swarm on default ip, not local system
+# docker swarm init --advertise-addr 172.17.0.1 --listen-addr 0.0.0.0:2377 

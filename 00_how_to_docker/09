@@ -8,4 +8,12 @@ apt-get update -y
 apt-get install git -y
 apt-get install gcc -y
 
+# p.s. run the command not the script.
 # Start Debian container: docker run -ti --rm debian
+
+# apt-get - APT package handling utility - command-line interface
+# update - Used to re-synchronize the package index files from their sources.
+# upgrade - Used to install the newest versions of all packages currently installed on the system 
+# from the sources enumerated in /etc/apt/sources.list
+# install pkg(s) - This option is followed by one or more packages desired for installation. 
+# -y, --yes, --assume-yes - Automatic yes to prompts. 
