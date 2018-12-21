@@ -1,3 +1,5 @@
+# A developing environment to code in nodejs, but using yarn rather than npm
+
 FROM ubuntu
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y nodejs npm git vim emacs
