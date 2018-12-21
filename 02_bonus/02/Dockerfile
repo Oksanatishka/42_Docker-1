@@ -1,3 +1,6 @@
+# Containerize the server of your favorite game, like Minecraft
+# https://minecraft.net/en-us/download/server/
+
 FROM debian
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget default-jre
