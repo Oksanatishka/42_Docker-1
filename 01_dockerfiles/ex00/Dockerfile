@@ -15,6 +15,8 @@ CMD	["vim"]
 # How to run it?
 # docker run --rm -ti ex00
 
+# p.s. this exercise requires Char docker-machine
+
 # https://www.cyberciti.biz/faq/10-alpine-linux-apk-command-examples/
 # APK stands for Alpine Linux package manager. You use the apk command to delete, install, upgrade, 
 # or list software on a running Alpine Linux based system.
