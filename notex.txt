@@ -303,7 +303,7 @@ command line user interface for Unix-like operating systems.
     - Korn shell (ksh)
     - Z shell (zsh) - a relatively modern shell that is backward compatible with bash.
 ------------------------------------------------------------------------------------------
-
+PART 1.
 01 create VM (Char)
 02 get IP of VM
 03 make active VM
@@ -341,3 +341,15 @@ command line user interface for Unix-like operating systems.
 
 service - container - images - VM
 
+PART 2.
+00 From an alpine image add to your container vim text editor.
+01 From a debian image add sources to create a TeamSpeak server.
+02 Create Dockerfile to containerize Rails applications.
+03 Design a Dockerfile that gets the development version of Gitlab.
+
+PART 3.
+00 Talking cow
+01 C environment
+02 Minecraft
+03 A developing environment to code in nodejs, but using yarn rather than npm
+04 Java environment
